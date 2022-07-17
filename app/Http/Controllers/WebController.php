@@ -10,24 +10,50 @@ class WebController extends Controller
         return view("about-us");
     }
 
-    public function CategoryCreate(){
-        return view("Pages.Forms.Create-Category");
+    public function StudentView(){
+        return view("Pages.Lists.StudentList");
+    }
+    public function SubjectView(){
+        return view("Pages.Lists.SubjectList");
+    }
+    public function ClassView(){
+        return view("Pages.Lists.ClassesList");
+    }
+    public function ScoreView(){
+        return view("Pages.Lists.ScoreList");
+    }
+    public function SSView(){
+        return view("Pages.Lists.StudentSubject");
     }
 
-    public function CategoryEdit(){
-        return view("Pages.Forms.Edit-Category");
+    public function StudentCreate(){
+        return view("Pages.Forms.StudentCreate");
     }
-
-    public function ProductCreate(){
-        return view("Pages.Forms.Create-Product");
+    public function StudentEdit(){
+        return view("Pages.Forms.StudentEdit");
     }
-    public function ProductEdit(){
-        return view("Pages.Forms.Edit-Product");
+    public function SubjectCreate(){
+        return view("Pages.Forms.SubjectCreate");
     }
-    public function ViewCategory(){
-        return view("Pages.Lists.Category");
+    public function SubjectEdit(){
+        return view("Pages.Forms.SubjectEdit");
     }
-    public function ViewProduct(){
-        return view("Pages.Lists.Product");
+    public function ClassesCreate(){
+        return view("Pages.Forms.ClassesCreate");
+    }
+    public function ClassesEdit(){
+        return view("Pages.Forms.ClassesEdit");
+    }
+    public function ScoreCreate(){
+        return view("Pages.Forms.ScoreCreate");
+    }
+    public function ScoreEdit(){
+        return view("Pages.Forms.ScoreEdit");
+    }
+    public function SSCreate(){
+        return view("Pages.Forms.StudentSubjectCreate");
+    }
+    public function SSEdit(){
+        return view("Pages.Forms.StudentSubjectEdit");
     }
 }

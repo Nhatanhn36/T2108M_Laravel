@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', "Product Edit - Forms")
+@section('title', "Score List")
 
 @section('open-menu')
     <nav class="mt-2">
@@ -187,7 +187,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item has-treeview menu-open">
+            <li class="nav-item has-treeview">
                 <a href="#" class="nav-link active">
                     <i class="nav-icon fas fa-edit"></i>
                     <p>
@@ -197,15 +197,15 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="/category-create" class="nav-link">
+                        <a href="/Score-create" class="nav-link active">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Category Create</p>
+                            <p>Score Create</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/category-edit" class="nav-link">
+                        <a href="/Score-edit" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Category Edit</p>
+                            <p>Score Edit</p>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -215,7 +215,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/product-edit" class="nav-link active">
+                        <a href="/product-edit" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Product Edit</p>
                         </a>
@@ -246,8 +246,8 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
+            <li class="nav-item has-treeview menu-open">
+                <a href="#" class="nav-link active">
                     <i class="nav-icon fas fa-table"></i>
                     <p>
                         Tables
@@ -256,9 +256,9 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="/category-list" class="nav-link">
+                        <a href="/Score-list" class="nav-link active">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Category List</p>
+                            <p>Score List</p>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -574,12 +574,12 @@
 @section('content-header')
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1>Product Forms - Edit</h1>
+            <h1>Score List</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Forms</a></li>
-                <li class="breadcrumb-item active">Product Edit</li>
+                <li class="breadcrumb-item active">Score List</li>
             </ol>
         </div>
     </div>
@@ -587,62 +587,54 @@
 
 @section('main')
     <div class="row">
-        <!-- column -->
-        <div class="col-sm-10 mx-auto">
-            <!-- general form elements -->
-            <div class="card card-primary">
+        <div class="col-12">
+            <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Edit</h3>
+                    <h3 class="card-title">Score List</h3>
+
+                    <div class="card-tools">
+                        <div class="input-group input-group-sm" style="width: 150px;">
+                            <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.card-header -->
-                <!-- form start -->
-                <form role="form">
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label>ID</label>
-                            <input type="text" class="form-control" placeholder="Output ID..." disabled>
-                        </div>
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" placeholder="Output Name..." required>
-                        </div>
-                        <div class="form-group">
-                            <label>Price</label>
-                            <input type="text" class="form-control" placeholder="Output Price..." required>
-                        </div>
-                        <div class="form-group">
-                            <label>Unit</label>
-                            <input type="text" class="form-control" placeholder="Output Unit..." required>
-                        </div>
-                        <!-- textarea -->
-                        <div class="form-group">
-                            <label>Description</label>
-                            <textarea class="form-control" rows="5" placeholder="Output Description..."></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputFile">Image</label>
-                            <div class="input-group">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="exampleInputFile" accept="image/png, image/jpeg>
-                                    <label class="custom-file-label" for="exampleInputFile"></label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group mb-0">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" name="terms" class="custom-control-input" id="exampleCheck1">
-                                <label class="custom-control-label" for="exampleCheck1">I agree to the <a href="#">terms of service</a>.</label>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.card-body -->
-                    <div class="card-footer col-md-12 text-center">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </form>
+                <div class="card-body table-responsive p-0">
+                    <table class="table table-hover text-nowrap">
+                        <thead>
+                        <tr>
+                            <th>ScoreID</th>
+                            <th>Score</th>
+                            <th>Result</th>
+                            <th>StudentID</th>
+                            <th>SubjectID</th>
+                            <th>Action</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><a><button type="button" class="btn btn-info">Edit</button></a></td>
+                            <td><a><button type="button" class="btn btn-danger">Delete</button></a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
             </div>
             <!-- /.card -->
         </div>
-        <!--/.col -->
     </div>
+    <!-- /.row -->
 @endsection
+
+

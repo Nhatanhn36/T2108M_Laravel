@@ -18,9 +18,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get("/about",[\App\Http\Controllers\WebController::class,"aboutUs"]);
-Route::get("/createCategory",[\App\Http\Controllers\WebController::class,"CategoryCreate"]);
-Route::get("/editCategory",[\App\Http\Controllers\WebController::class,"CategoryEdit"]);
-Route::get("/createProduct",[\App\Http\Controllers\WebController::class,"ProductCreate"]);
-Route::get("/editProduct",[\App\Http\Controllers\WebController::class,"ProductEdit"]);
-Route::get("/category",[\App\Http\Controllers\WebController::class,"ViewCategory"]);
-Route::get("/product",[\App\Http\Controllers\WebController::class,"ViewProduct"]);
+Route::get("/studentlist",[\App\Http\Controllers\WebController::class,"StudentView"]);
+Route::get("/subjectlist",[\App\Http\Controllers\WebController::class,"SubjectView"]);
+Route::get("/classeslist",[\App\Http\Controllers\WebController::class,"ClassView"]);
+Route::get("/scorelist",[\App\Http\Controllers\WebController::class,"ScoreView"]);
+Route::get("/studentsubjectlist",[\App\Http\Controllers\WebController::class,"SSView"]);
+
+Route::get("/student-create",[\App\Http\Controllers\WebController::class,"StudentCreate"]);
+Route::get("/student-edit",[\App\Http\Controllers\WebController::class,"StudentEdit"]);
+Route::get("/subject-create",[\App\Http\Controllers\WebController::class,"SubjectCreate"]);
+Route::get("/subject-edit",[\App\Http\Controllers\WebController::class,"SubjectEdit"]);
+Route::get("/classes-create",[\App\Http\Controllers\WebController::class,"ClassesCreate"]);
+Route::get("/classes-edit",[\App\Http\Controllers\WebController::class,"ClassesEdit"]);
+Route::get("/score-create",[\App\Http\Controllers\WebController::class,"ScoreCreate"]);
+Route::get("/score-edit",[\App\Http\Controllers\WebController::class,"ScoreEdit"]);
+Route::get("/ss-create",[\App\Http\Controllers\WebController::class,"SSCreate"]);
+Route::get("/ss-edit",[\App\Http\Controllers\WebController::class,"SSEdit"]);
+

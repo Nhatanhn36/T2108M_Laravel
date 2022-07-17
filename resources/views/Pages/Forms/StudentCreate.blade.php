@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', "Product Create - Forms")
+@section('title', "Student Create - Forms")
 
 @section('open-menu')
     <nav class="mt-2">
@@ -197,19 +197,19 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="/category-create" class="nav-link">
+                        <a href="/Student-create" class="nav-link active">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Category Create</p>
+                            <p>Student Create</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/category-edit" class="nav-link">
+                        <a href="/Student-edit" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Category Edit</p>
+                            <p>Student Edit</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/product-create" class="nav-link active">
+                        <a href="/product-create" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Product Create</p>
                         </a>
@@ -256,9 +256,9 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="/category-list" class="nav-link">
+                        <a href="/Student-list" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Category List</p>
+                            <p>Student List</p>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -574,12 +574,12 @@
 @section('content-header')
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1>Product Forms - Create</h1>
+            <h1>Student Forms - Create</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Forms</a></li>
-                <li class="breadcrumb-item active">Product Create</li>
+                <li class="breadcrumb-item active">Student Create</li>
             </ol>
         </div>
     </div>
@@ -599,34 +599,21 @@
                 <form role="form">
                     <div class="card-body">
                         <div class="form-group">
-                            <label>ID</label>
+                            <label>StudentID</label>
                             <input type="text" class="form-control" placeholder="Auto increment primary key..." disabled>
                         </div>
                         <div class="form-group">
-                            <label>Name</label>
+                            <label>StudentName</label>
                             <input type="text" class="form-control" placeholder="Input Name..." required>
-                        </div>
-                        <div class="form-group">
-                            <label>Price</label>
-                            <input type="text" class="form-control" placeholder="Input Price..." required>
-                        </div>
-                        <div class="form-group">
-                            <label>Unit</label>
-                            <input type="text" class="form-control" placeholder="Input Unit..." required>
                         </div>
                         <!-- textarea -->
                         <div class="form-group">
-                            <label>Description</label>
+                            <label>Date Of Birth</label>
                             <textarea class="form-control" rows="5" placeholder="Input Description..."></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputFile">Image</label>
-                            <div class="input-group">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="exampleInputFile" accept="image/png, image/jpeg>
-                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                                </div>
-                            </div>
+                            <label>ClassID</label>
+                            <input type="text" class="form-control" placeholder="Input Name..." required>
                         </div>
                         <div class="form-group mb-0">
                             <div class="custom-control custom-checkbox">
@@ -636,6 +623,7 @@
                         </div>
                     </div>
                     <!-- /.card-body -->
+
                     <div class="card-footer col-md-12 text-center">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>

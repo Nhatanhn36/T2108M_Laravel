@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', "Products List")
+@section('title', "Student Edit - Forms")
 
 @section('open-menu')
     <nav class="mt-2">
@@ -187,7 +187,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item has-treeview">
+            <li class="nav-item has-treeview menu-open">
                 <a href="#" class="nav-link active">
                     <i class="nav-icon fas fa-edit"></i>
                     <p>
@@ -197,21 +197,21 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="/category-create" class="nav-link active">
+                        <a href="/Student-Edit" class="nav-link active">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Category Create</p>
+                            <p>Student Edit</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/category-edit" class="nav-link">
+                        <a href="/Student-edit" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Category Edit</p>
+                            <p>Student Edit</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/product-create" class="nav-link">
+                        <a href="/product-Edit" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Product Create</p>
+                            <p>Product Edit</p>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -246,8 +246,8 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item has-treeview menu-open">
-                <a href="#" class="nav-link active">
+            <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-table"></i>
                     <p>
                         Tables
@@ -256,13 +256,13 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="/category-list" class="nav-link">
+                        <a href="/Student-list" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Category List</p>
+                            <p>Student List</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/products-list" class="nav-link active">
+                        <a href="/products-list" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Product List</p>
                         </a>
@@ -574,12 +574,12 @@
 @section('content-header')
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1>Products List</h1>
+            <h1>Student Forms - Edit</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Forms</a></li>
-                <li class="breadcrumb-item active">Products List</li>
+                <li class="breadcrumb-item active">Student Edit</li>
             </ol>
         </div>
     </div>
@@ -587,83 +587,50 @@
 
 @section('main')
     <div class="row">
-        <div class="col-12">
-            <div class="card">
+        <!-- column -->
+        <div class="col-sm-10 mx-auto">
+            <!-- general form elements -->
+            <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">Products List</h3>
-
-                    <div class="card-tools">
-                        <div class="input-group input-group-sm" style="width: 150px;">
-                            <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                            <div class="input-group-append">
-                                <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                    <h3 class="card-title">Edit</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form role="form">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>StudentID</label>
+                            <input type="text" class="form-control" placeholder="Auto increment primary key..." disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>StudentName</label>
+                            <input type="text" class="form-control" placeholder="Input Name..." required>
+                        </div>
+                        <!-- textarea -->
+                        <div class="form-group">
+                            <label>Date Of Birth</label>
+                            <textarea class="form-control" rows="5" placeholder="Input Description..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>ClassID</label>
+                            <input type="text" class="form-control" placeholder="Input Name..." required>
+                        </div>
+                        <div class="form-group mb-0">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" name="terms" class="custom-control-input" id="exampleCheck1">
+                                <label class="custom-control-label" for="exampleCheck1">I agree to the <a href="#">terms of service</a>.</label>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- /.card-header -->
-                <div class="card-body table-responsive p-0">
-                    <table class="table table-hover text-nowrap">
-                        <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Product Name</th>
-                            <th>Price</th>
-                            <th>Unit</th>
-                            <th>Description</th>
-                            <th>Image</th>
-                            <th>Action</th>
-                            <th>Action</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>183</td>
-                            <td>Shoes</td>
-                            <td>100$</td>
-                            <td>noun</td>
-                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                            <td></td>
-                            <td><a><button type="button" class="btn btn-info">Edit</button></a></td>
-                            <td><a><button type="button" class="btn btn-danger">Delete</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>219</td>
-                            <td>Shirt</td>
-                            <td>80$</td>
-                            <td>noun</td>
-                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                            <td></td>
-                            <td><a><button type="button" class="btn btn-info">Edit</button></a></td>
-                            <td><a><button type="button" class="btn btn-danger">Delete</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>657</td>
-                            <td>Beef</td>
-                            <td>50$</td>
-                            <td>noun</td>
-                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                            <td></td>
-                            <td><a><button type="button" class="btn btn-info">Edit</button></a></td>
-                            <td><a><button type="button" class="btn btn-danger">Delete</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>175</td>
-                            <td>Beer</td>
-                            <td>10$</td>
-                            <td>noun</td>
-                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                            <td></td>
-                            <td><a><button type="button" class="btn btn-info">Edit</button></a></td>
-                            <td><a><button type="button" class="btn btn-danger">Delete</button></a></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <!-- /.card-body -->
+                    <!-- /.card-body -->
+
+                    <div class="card-footer col-md-12 text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
             </div>
             <!-- /.card -->
         </div>
+        <!--/.col -->
     </div>
 @endsection

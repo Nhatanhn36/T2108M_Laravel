@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', "Category Create - Forms")
+@section('title', "Score Edit - Forms")
 
 @section('open-menu')
     <nav class="mt-2">
@@ -197,21 +197,21 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="/category-create" class="nav-link active">
+                        <a href="/Score-Edit" class="nav-link active">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Category Create</p>
+                            <p>Score Edit</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/category-edit" class="nav-link">
+                        <a href="/Score-edit" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Category Edit</p>
+                            <p>Score Edit</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/product-create" class="nav-link">
+                        <a href="/product-Edit" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Product Create</p>
+                            <p>Product Edit</p>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -256,9 +256,9 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="/category-list" class="nav-link">
+                        <a href="/Score-list" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Category List</p>
+                            <p>Score List</p>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -574,12 +574,12 @@
 @section('content-header')
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1>Category Forms - Create</h1>
+            <h1>Score Forms - Edit</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Forms</a></li>
-                <li class="breadcrumb-item active">Category Create</li>
+                <li class="breadcrumb-item active">Score Edit</li>
             </ol>
         </div>
     </div>
@@ -592,24 +592,31 @@
             <!-- general form elements -->
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">Create</h3>
+                    <h3 class="card-title">Edit</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form role="form">
                     <div class="card-body">
                         <div class="form-group">
-                            <label>ID</label>
+                            <label>ScoreID</label>
                             <input type="text" class="form-control" placeholder="Auto increment primary key..." disabled>
                         </div>
                         <div class="form-group">
-                            <label>Name</label>
+                            <label>Score</label>
                             <input type="text" class="form-control" placeholder="Input Name..." required>
                         </div>
-                        <!-- textarea -->
                         <div class="form-group">
-                            <label>Description</label>
-                            <textarea class="form-control" rows="5" placeholder="Input Description..."></textarea>
+                            <label>Result</label>
+                            <input type="text" class="form-control" placeholder="Input Name..." required>
+                        </div>
+                        <div class="form-group">
+                            <label>StudentID</label>
+                            <input type="text" class="form-control" placeholder="Auto increment primary key..." disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>SubjectID</label>
+                            <input type="text" class="form-control" placeholder="Input Name..." required>
                         </div>
                         <div class="form-group mb-0">
                             <div class="custom-control custom-checkbox">
