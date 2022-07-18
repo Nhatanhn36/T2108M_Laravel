@@ -50,10 +50,4 @@ class WebController extends Controller
     public function ScoreEdit(){
         return view("Pages.Forms.ScoreEdit");
     }
-    public function SSCreate(){
-        return view("Pages.Forms.StudentSubjectCreate");
-    }
-    public function SSEdit(){
-        return view("Pages.Forms.StudentSubjectEdit");
-    }
 }

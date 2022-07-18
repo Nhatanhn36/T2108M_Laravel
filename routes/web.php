@@ -32,6 +32,4 @@ Route::get("/classes-create",[\App\Http\Controllers\WebController::class,"Classe
 Route::get("/classes-edit",[\App\Http\Controllers\WebController::class,"ClassesEdit"]);
 Route::get("/score-create",[\App\Http\Controllers\WebController::class,"ScoreCreate"]);
 Route::get("/score-edit",[\App\Http\Controllers\WebController::class,"ScoreEdit"]);
-Route::get("/ss-create",[\App\Http\Controllers\WebController::class,"SSCreate"]);
-Route::get("/ss-edit",[\App\Http\Controllers\WebController::class,"SSEdit"]);
 
