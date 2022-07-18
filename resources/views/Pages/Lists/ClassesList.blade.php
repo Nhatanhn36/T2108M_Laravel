@@ -615,15 +615,18 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($classes as $item)
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{$item->ClassID}}</td>
+                            <td>{{$item->ClassName}}</td>
+                            <td>{{$item->Room}}</td>
                             <td><a><button type="button" class="btn btn-info">Edit</button></a></td>
                             <td><a><button type="button" class="btn btn-danger">Delete</button></a></td>
                         </tr>
+                        @endforeach
                         </tbody>
                     </table>
+                    {!! $classes->links() !!}
                 </div>
                 <!-- /.card-body -->
             </div>

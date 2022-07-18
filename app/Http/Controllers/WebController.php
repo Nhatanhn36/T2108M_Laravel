@@ -9,15 +9,8 @@ class WebController extends Controller
     public function aboutUs(){
         return view("about-us");
     }
-
-    public function StudentView(){
-        return view("Pages.Lists.StudentList");
-    }
     public function SubjectView(){
         return view("Pages.Lists.SubjectList");
-    }
-    public function ClassView(){
-        return view("Pages.Lists.ClassesList");
     }
     public function ScoreView(){
         return view("Pages.Lists.ScoreList");

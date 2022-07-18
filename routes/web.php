@@ -18,9 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get("/about",[\App\Http\Controllers\WebController::class,"aboutUs"]);
-Route::get("/studentlist",[\App\Http\Controllers\WebController::class,"StudentView"]);
+Route::get("/student/list",[\App\Http\Controllers\StudentController::class,"all"]);
 Route::get("/subjectlist",[\App\Http\Controllers\WebController::class,"SubjectView"]);
-Route::get("/classeslist",[\App\Http\Controllers\WebController::class,"ClassView"]);
+Route::get("/class/list",[\App\Http\Controllers\ClassesController::class,"all"]);
 Route::get("/scorelist",[\App\Http\Controllers\WebController::class,"ScoreView"]);
 Route::get("/studentsubjectlist",[\App\Http\Controllers\WebController::class,"SSView"]);
 

@@ -616,16 +616,19 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($student as $item)
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{$item->StudentID}}</td>
+                            <td>{{$item->StudentName}}</td>
+                            <td>{{$item->DateOfBirth}}</td>
+                            <td>{{$item->ClassID}}</td>
                             <td><a><button type="button" class="btn btn-info">Edit</button></a></td>
                             <td><a><button type="button" class="btn btn-danger">Delete</button></a></td>
                         </tr>
+                        @endforeach
                         </tbody>
                     </table>
+                    {!! $student->links() !!}
                 </div>
                 <!-- /.card-body -->
             </div>
