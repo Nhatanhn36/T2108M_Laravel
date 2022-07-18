@@ -19,4 +19,36 @@ class Student extends Model
         "created_at",
         "updated_at"
     ];
+
+    public function classes(){
+        // return 1 object Classes
+        //return Classes::where("ClassID",$this->ClassID)->first();
+        return $this->belongsTo(Classes::class,"ClassID","ClassID");
+    }
+
+    public function scopeSearch($query,$Search = ''){
+        if($Search != null && $Search != ''){
+            return $query->where("StudentName","like",'%'.$Search.'%');
+        }
+        return $query;
+    }
+
+    public function scopeClassFilter($query,$cid = ''){
+        if ($cid != null && $cid != ''){
+            return $query->where("ClassID",$cid);
+        }
+        return $query;
+    }
+    public function scopeDoBFrom($query,$DoBFrom = ''){
+        if ($DoBFrom != null && $DoBFrom != ''){
+            return $query->where("DateOfBirth",'>=',$DoBFrom);
+        }
+        return $query;
+    }
+     public function scopeDoBTo($query,$DoBTo = ''){
+        if ($DoBTo != null && $DoBTo !=''){
+            return $query->where("DateOfBirth",'<=',$DoBTo);
+        }
+        return $query;
+     }
 }
