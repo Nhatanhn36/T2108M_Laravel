@@ -8,10 +8,7 @@
             <h1>Classes List</h1>
         </div>
         <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Forms</a></li>
-                <li class="breadcrumb-item active">Classes List</li>
-            </ol>
+            <a href="{{url("/class/create")}}"><button type="submit" class="btn btn-primary float-right">Add classes</button></a>
         </div>
     </div>
 @endsection
@@ -20,12 +17,15 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
+                <form method="get" action="{{url("/classes/list")}}">
+
+                </form>
                 <div class="card-header">
                     <h3 class="card-title">Classes List</h3>
 
                     <div class="card-tools">
                         <div class="input-group input-group-sm" style="width: 150px;">
-                            <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                            <input type="text" value="{{app("request")->input("classname")}}" name="classname" class="form-control float-right" placeholder="Search">
 
                             <div class="input-group-append">
                                 <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
@@ -59,7 +59,7 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {!! $classes->links() !!}
+                    {!! $classes->appends(app("request")->input())->links() !!}
                 </div>
                 <!-- /.card-body -->
             </div>

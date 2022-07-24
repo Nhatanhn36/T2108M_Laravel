@@ -13,7 +13,9 @@ class Student extends Model
     protected $keyType = "string";
 
     protected $fillable = [
+        "StudentID",
         "StudentName",
+        "image",
         "DateOfBirth",
         "ClassID",
         "created_at",
@@ -50,5 +52,12 @@ class Student extends Model
             return $query->where("DateOfBirth",'<=',$DoBTo);
         }
         return $query;
+     }
+
+     public function getImage(){
+        if ($this->image){
+            return $this->image;
+        }
+        return 'uploads/Avatar1.jpg';
      }
 }

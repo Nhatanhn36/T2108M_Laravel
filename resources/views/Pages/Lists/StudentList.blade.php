@@ -8,10 +8,7 @@
             <h1>Student List</h1>
         </div>
         <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Forms</a></li>
-                <li class="breadcrumb-item active">Student List</li>
-            </ol>
+            <a href="{{url("/student/create")}}"><button type="submit" class="btn btn-primary float-right">Add student</button></a>
         </div>
     </div>
 @endsection
@@ -27,12 +24,12 @@
                                 <select name="classID" class="form-control float-right">
                                     <option value="">Select Class...</option>
                                     @foreach($classList as $item)
-                                        <option value="{{$item->ClassID}}">{{$item->ClassName}}</option>
+                                        <option @if(app("request")->input("classID") == $item->ClassID) selected @endif value="{{$item->ClassID}}">{{$item->ClassName}}</option>
                                     @endforeach
                                 </select>
-                                <input type="date" name="dateFrom" class="form-control float-right">
-                                <input type="date" name="dateTo" class="form-control float-right">
-                                <input type="text" name="name" class="form-control float-right" placeholder="Search">
+                                <input type="date" value="{{app("request")->input("dateFrom")}}" name="dateFrom" class="form-control float-right">
+                                <input type="date" value="{{app("request")->input("dateTo")}}" name="dateTo" class="form-control float-right">
+                                <input type="text" value="{{app("request")->input("name")}}" name="name" class="form-control float-right" placeholder="Search">
                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
                                 </div>
@@ -47,6 +44,7 @@
                         <thead>
                         <tr>
                             <th>StudentID</th>
+                            <th>Image</th>
                             <th>StudentName</th>
                             <th>DateOfBirth</th>
                             <th>ClassID</th>
@@ -58,16 +56,24 @@
                         @foreach($student as $item)
                         <tr>
                             <td>{{$item->StudentID}}</td>
+                            <td><img src="{{$item->getImage()}}" class="img-circle" width="60px" height="auto"/></td>
                             <td>{{$item->StudentName}}</td>
                             <td>{{$item->DateOfBirth}}</td>
                             <td>{{$item->classes->ClassName}}</td>
-                            <td><a><button type="button" class="btn btn-info">Edit</button></a></td>
-                            <td><a><button type="button" class="btn btn-danger">Delete</button></a></td>
+                            <td><a href="{{url('/student/edit',['id'=>$item->StudentID])}}" class="btn btn-info">Edit</a></td>
+                            <td>
+                                <form action="{{url("/student/delete",['student'=>$item->StudentID])}}" method="post">
+                                    @csrf
+                                    @method("delete")
+                                    <button type="submit" onclick="return confirm('Delete Student {{$item->StudentName}}?');" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
+
                         </tr>
                         @endforeach
                         </tbody>
                     </table>
-                    {!! $student->links() !!}
+                    {!! $student->appends(app("request")->input())->links() !!}
                 </div>
                 <!-- /.card-body -->
             </div>

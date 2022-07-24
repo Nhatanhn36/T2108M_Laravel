@@ -19,12 +19,6 @@ class WebController extends Controller
         return view("Pages.Lists.StudentSubject");
     }
 
-    public function StudentCreate(){
-        return view("Pages.Forms.StudentCreate");
-    }
-    public function StudentEdit(){
-        return view("Pages.Forms.StudentEdit");
-    }
     public function SubjectCreate(){
         return view("Pages.Forms.SubjectCreate");
     }
